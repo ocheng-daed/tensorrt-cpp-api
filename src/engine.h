@@ -360,8 +360,8 @@ bool Engine<T>::loadNetwork(std::string trtModelPath, const std::array<float, 3>
             } else if (tensorDataType == nvinfer1::DataType::kUINT8 && !std::is_same<uint8_t, T>::value) {
                 throw std::runtime_error("Error, the model has expected output of type uint8_t. Engine "
                                          "class template parameter must be adjusted.");
-            } else if (tensorDataType == nvinfer1::DataType::kFP8) {
-                throw std::runtime_error("Error, model has unsupported output type");
+            // } else if (tensorDataType == nvinfer1::DataType::kFP8) {
+            //     throw std::runtime_error("Error, model has unsupported output type");
             }
 
             // The binding is an output
